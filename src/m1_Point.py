@@ -53,6 +53,7 @@ class Point(object):
         """Constructs new point located at the given x y"""
         self.x = x
         self.y = y
+        self.moves = 0
 
     def __repr__(self):
         """Returns a string that represents the point"""
@@ -68,13 +69,16 @@ class Point(object):
         """Moves this point to a new x y location"""
         self.x = x
         self.y = y
+        self.moves = self.moves + 1
+
 
     def move_by(self, dx, dy):
         self.x = self.x + dx
         self.y = self.y + dy
+        self.moves = self.moves + 1
 
     def get_number_of_moves_made(self):
-        
+        return self.moves
 
 def run_test_init():
     """
